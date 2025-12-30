@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(350px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out;
+}
