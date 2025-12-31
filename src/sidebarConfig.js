@@ -70,12 +70,12 @@ export const SIDEBAR_CONFIG = {
   RESTAURANT: [
     {
       category: "Overview",
-      items: [{ name: "Dashboard", icon: LayoutDashboard }]
+      items: [{ name: "Dashboard", icon: LayoutDashboard ,path:"/admin" }]
     },
     {
       category: "Restaurant Management",
       items: [
-        { name: "Restaurant Profile", icon: Store },
+        { name: "Restaurant Profile", icon: Store ,path:"/admin/restaurant-profile"},
         { name: "Verification Status", icon: ShieldCheck }
       ]
     },

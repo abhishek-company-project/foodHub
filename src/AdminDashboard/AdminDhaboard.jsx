@@ -1,43 +1,20 @@
-import React from 'react'
-import Sidebar from '../components/dashboard/Sidebar'
-import Header from '../components/dashboard/Header'
-import { Outlet } from 'react-router'
-import {
-  LayoutDashboard,
-  FileText,
-  Package,
-  Users,
-  CreditCard,
-  Receipt,
-  Settings,
-  ClipboardCheck,
-  MessageSquare,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import Sidebar from "../components/dashboard/Sidebar";
+import Header from "../components/dashboard/Header";
+import { SIDEBAR_CONFIG } from "../sidebarConfig";
+import { Outlet } from "react-router";
 
-{/* <ClipboardCheck /> */}
 function AdminDhaboard() {
-  
-    const menuItems = [
-      { name: "Dashboard-admin", icon: LayoutDashboard, active: true },
-      { name: "Orders", icon: Receipt },
-      { name: "Menu Items", icon: Package },
-      { name: "Customers", icon: Users },
-      { name: "Reports", icon: FileText },
-      { name: "Transactions", icon: CreditCard },
-      { name: "Settings", icon: Settings },
-      { name: "Help", icon: ClipboardCheck },
-    ];
+  const role = "RESTAURANT"; // from auth / redux / context
+
   return (
-    <div className='w-screen h-screen  flex '>
-       <Sidebar data={menuItems}/>
-        <div className='w-full h-full '>
-            <Header/>
-            <Outlet/>
-        </div>
+    <div className="w-screen h-screen flex">
+      <Sidebar menu={SIDEBAR_CONFIG[role]} />
+      <div className="w-full h-full">
+        <Header />
+        <Outlet/>
+      </div>
     </div>
-  )
+  );
 }
 
-export default AdminDhaboard
+export default AdminDhaboard;

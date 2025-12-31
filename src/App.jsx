@@ -14,6 +14,7 @@ import Report from './AdminDashboard/Report'
 import UserDashbaord from './UserDashabord/UserDashbaord'
 import SuperAdminDashboard from './SuperAdminDashboard/SuperAdminDashboard'
 import DriverDashboard from './DriveDashboard/DriverDashboard'
+import RestauantProfile from './AdminDashboard/RestauantProfile'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
      <Route path="/admin" element={<AdminDhaboard/>}>
      <Route index element={<MainDashboard/>}/>
      <Route path='report' element={<Report/>}/>
+     <Route path='restaurant-profile' element={<RestauantProfile/>}/>
      </Route>
 
       {/* user dashboad routing */}

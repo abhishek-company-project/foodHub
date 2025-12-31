@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { NavLink } from "react-router";
 
 export default function Sidebar({ menu }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -37,6 +38,7 @@ export default function Sidebar({ menu }) {
                 icon={item.icon}
                 name={item.name}
                 collapsed={collapsed}
+                path={item.path}
               />
             ))}
           </div>
@@ -46,14 +48,17 @@ export default function Sidebar({ menu }) {
   );
 }
 
-function SidebarItem({ icon: Icon, name, collapsed }) {
+function SidebarItem({ icon: Icon, name, collapsed ,path }) {
   return (
+    <NavLink to={path}>
+
     <button
       className="flex items-center w-full gap-3 px-3 py-2 rounded-lg mb-1
       text-gray-600 hover:bg-gray-100 transition"
-    >
+      >
       <Icon size={20} />
       {!collapsed && <span className="text-sm">{name}</span>}
     </button>
+      </NavLink>
   );
 }
