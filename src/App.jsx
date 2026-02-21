@@ -15,6 +15,7 @@ import UserDashbaord from './UserDashabord/UserDashbaord'
 import SuperAdminDashboard from './SuperAdminDashboard/SuperAdminDashboard'
 import DriverDashboard from './DriveDashboard/DriverDashboard'
 import RestauantProfile from './AdminDashboard/RestauantProfile'
+import Counter from './components/Counter'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path="/collection/:id" element={<CollectionPage/>}/>
         <Route path='/practice' element={<Practice/>} />
+        <Route path='/count' element={<Counter/>} />
         {/* <Route path='/' element={<Authlayout />} /> */}
 
 

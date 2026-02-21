@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/authSlice";
 
 const Navbar = ({ openLogin }) => {
+  const count=useSelector((state)=>state.counter.value)
+  const user=useSelector((state)=>state.auth.user)
+  const dispatch=useDispatch()
   return (
     <nav className="w-full bg-orange-500 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-around">
@@ -29,12 +35,29 @@ const Navbar = ({ openLogin }) => {
           </NavLink>
 
           {/* SIGN IN BUTTON */}
-          <button
+
+          
+         
+
+      {
+        user?"hello,"+user.username:"hello,user"
+      }
+
+          {
+            user? <button
+            className="px-8 py-4 border border-gray-300 bg-red-400 rounded-xl"
+            onClick={()=>{dispatch(logout())}}
+          >
+            logout
+          </button>: <button
             onClick={openLogin}
             className="px-8 py-4 border border-gray-300 bg-black rounded-xl"
           >
-            Sign In
+            Sign In {count}
           </button>
+          }
+
+         
         </div>
       </div>
     </nav>
